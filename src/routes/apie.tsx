@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaBand, Layout, PageHeader, seo } from "@/components/site/Layout";
-import { site } from "@/config/site";
+import { Portrait } from "@/components/site/Portrait";
 
 export const Route = createFileRoute("/apie")({
   head: () => seo("Apie korepetitorių", "Vilniaus universiteto matematikos bakalauras, privataus mokymo patirtis nuo 2022 m., klinikinės statistinės analizės patirtis."),
@@ -12,13 +12,7 @@ function Page() {
     <Layout>
       <PageHeader eyebrow="Apie" title="Matematika — mano kalba. Mokymas — mano darbas." />
       <section className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1fr_1.5fr] items-start">
-        {site.photoUrl ? (
-          <img src={site.photoUrl} alt="MathSpace LT korepetitorius" className="aspect-[4/5] w-full rounded-3xl object-cover" />
-        ) : (
-          <div className="aspect-[4/5] w-full rounded-3xl border-2 border-dashed border-ring/40 bg-secondary/60 grid place-items-center text-center p-6 text-muted-foreground">
-            Vieta nuotraukai
-          </div>
-        )}
+        <Portrait />
         <div className="space-y-6 text-lg">
           <p>Esu nepriklausomas korepetitorius, mokantis matematikos, fizikos, statistikos ir Excel. Mano tikslas — kad mokinys ar studentas ne tik išspręstų uždavinį, bet ir suprastų, <em>kodėl</em> sprendimas veikia.</p>
           <ul className="space-y-4">

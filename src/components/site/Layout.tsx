@@ -8,6 +8,7 @@ const nav = [
   { to: "/apie", label: "Apie" },
   { to: "/pamokos", label: "Kaip vyksta pamokos" },
   { to: "/duk", label: "DUK" },
+  { to: "/registracija", label: "Registracija" },
 ] as const;
 
 export function Layout({ children }: { children: ReactNode }) {

@@ -19,7 +19,7 @@ const schema = z.object({
 const subjects = ["Matematika 5–12 kl.", "Fizika", "PUPP / VBE", "Tiesinė algebra", "Matematinė analizė", "Statistika", "Excel", "Statistinės analizės konsultacija", "Kita"];
 
 function Page() {
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Partial<Record<"name" | "email" | "subject" | "message", string>>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "mailto" | "error">("idle");
   const hasBackend = Boolean(site.formEndpoint);
 
@@ -52,7 +52,7 @@ function Page() {
       <PageHeader eyebrow="Kontaktai" title="Parašykite užklausą" intro="Trumpai papasakokite, ką mokotės ir ko siekiate. Atsakysiu ir pasiūlysiu tolesnius žingsnius." />
       <section className="mx-auto grid max-w-6xl gap-12 px-5 py-16 lg:grid-cols-[1.5fr_1fr]">
         <form onSubmit={onSubmit} noValidate className="rounded-3xl border border-border bg-card p-7 md:p-10 shadow-soft space-y-5">
-          {[["name", "Vardas", "text"], ["email", "El. paštas", "email"]].map(([n, l, t]) => (
+          {([["name", "Vardas", "text"], ["email", "El. paštas", "email"]] as const).map(([n, l, t]) => (
             <div key={n}>
               <label htmlFor={n} className="font-semibold">{l}</label>
               <input id={n} name={n} type={t} autoComplete={n} className={field} aria-invalid={!!errors[n]} aria-describedby={errors[n] ? `${n}-err` : undefined} />

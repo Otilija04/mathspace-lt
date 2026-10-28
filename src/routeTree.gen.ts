@@ -16,6 +16,7 @@ import { Route as KontaktaiRouteImport } from './routes/kontaktai'
 import { Route as PamokosRouteImport } from './routes/pamokos'
 import { Route as PaslaugosRouteImport } from './routes/paslaugos'
 import { Route as ProgramaRouteImport } from './routes/programa'
+import { Route as RegistracijaRouteImport } from './routes/registracija'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,11 @@ const ProgramaRoute = ProgramaRouteImport.update({
   path: '/programa',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RegistracijaRoute = RegistracijaRouteImport.update({
+  id: '/registracija',
+  path: '/registracija',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/pamokos': typeof PamokosRoute
   '/paslaugos': typeof PaslaugosRoute
   '/programa': typeof ProgramaRoute
+  '/registracija': typeof RegistracijaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/pamokos': typeof PamokosRoute
   '/paslaugos': typeof PaslaugosRoute
   '/programa': typeof ProgramaRoute
+  '/registracija': typeof RegistracijaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/pamokos': typeof PamokosRoute
   '/paslaugos': typeof PaslaugosRoute
   '/programa': typeof ProgramaRoute
+  '/registracija': typeof RegistracijaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/pamokos'
     | '/paslaugos'
     | '/programa'
+    | '/registracija'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/pamokos'
     | '/paslaugos'
     | '/programa'
+    | '/registracija'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/pamokos'
     | '/paslaugos'
     | '/programa'
+    | '/registracija'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   PamokosRoute: typeof PamokosRoute
   PaslaugosRoute: typeof PaslaugosRoute
   ProgramaRoute: typeof ProgramaRoute
+  RegistracijaRoute: typeof RegistracijaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgramaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/registracija': {
+      id: '/registracija'
+      path: '/registracija'
+      fullPath: '/registracija'
+      preLoaderRoute: typeof RegistracijaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   PamokosRoute: PamokosRoute,
   PaslaugosRoute: PaslaugosRoute,
   ProgramaRoute: ProgramaRoute,
+  RegistracijaRoute: RegistracijaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

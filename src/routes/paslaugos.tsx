@@ -22,8 +22,18 @@ function Page() {
       </section>
       <section className="mx-auto max-w-6xl px-5">
         <div className="rounded-2xl border border-dashed border-ring/50 bg-secondary/50 p-8">
-          <h2 className="text-2xl text-primary">Kaina</h2>
-          <p className="mt-2 text-muted-foreground">{site.price || "Kaina derinama individualiai pagal dalyką ir lygį."}</p>
+          <div className="flex flex-wrap items-center gap-3">
+            <h2 className="text-2xl text-primary">Kainų intervalai</h2>
+            {!site.pricesConfirmed && <span className="rounded-full bg-accent px-3 py-1 text-xs font-semibold">Kainos tikslinamos</span>}
+          </div>
+          <ul className="mt-4 divide-y divide-border">
+            {site.prices.map((p) => (
+              <li key={p.service} className="flex flex-col sm:flex-row sm:justify-between gap-1 py-3">
+                <span>{p.service}</span><span className="font-semibold text-primary">{p.range}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-sm text-muted-foreground">Tiksli kaina priklauso nuo lygio ir pamokų dažnumo — ją suderiname prieš pirmą pamoką.</p>
           <p className="mt-4 text-sm text-muted-foreground">Išsami temų programa — <Link to="/programa" className="underline text-primary">čia</Link>.</p>
         </div>
       </section>

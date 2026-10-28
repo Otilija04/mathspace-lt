@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApieRouteImport } from './routes/apie'
+import { Route as DukRouteImport } from './routes/duk'
+import { Route as KontaktaiRouteImport } from './routes/kontaktai'
+import { Route as PamokosRouteImport } from './routes/pamokos'
+import { Route as PaslaugosRouteImport } from './routes/paslaugos'
+import { Route as ProgramaRouteImport } from './routes/programa'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApieRoute = ApieRouteImport.update({
+  id: '/apie',
+  path: '/apie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DukRoute = DukRouteImport.update({
+  id: '/duk',
+  path: '/duk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktaiRoute = KontaktaiRouteImport.update({
+  id: '/kontaktai',
+  path: '/kontaktai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PamokosRoute = PamokosRouteImport.update({
+  id: '/pamokos',
+  path: '/pamokos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaslaugosRoute = PaslaugosRouteImport.update({
+  id: '/paslaugos',
+  path: '/paslaugos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramaRoute = ProgramaRouteImport.update({
+  id: '/programa',
+  path: '/programa',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/apie': typeof ApieRoute
+  '/duk': typeof DukRoute
+  '/kontaktai': typeof KontaktaiRoute
+  '/pamokos': typeof PamokosRoute
+  '/paslaugos': typeof PaslaugosRoute
+  '/programa': typeof ProgramaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/apie': typeof ApieRoute
+  '/duk': typeof DukRoute
+  '/kontaktai': typeof KontaktaiRoute
+  '/pamokos': typeof PamokosRoute
+  '/paslaugos': typeof PaslaugosRoute
+  '/programa': typeof ProgramaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/apie': typeof ApieRoute
+  '/duk': typeof DukRoute
+  '/kontaktai': typeof KontaktaiRoute
+  '/pamokos': typeof PamokosRoute
+  '/paslaugos': typeof PaslaugosRoute
+  '/programa': typeof ProgramaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/apie'
+    | '/duk'
+    | '/kontaktai'
+    | '/pamokos'
+    | '/paslaugos'
+    | '/programa'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/apie'
+    | '/duk'
+    | '/kontaktai'
+    | '/pamokos'
+    | '/paslaugos'
+    | '/programa'
+  id:
+    | '__root__'
+    | '/'
+    | '/apie'
+    | '/duk'
+    | '/kontaktai'
+    | '/pamokos'
+    | '/paslaugos'
+    | '/programa'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApieRoute: typeof ApieRoute
+  DukRoute: typeof DukRoute
+  KontaktaiRoute: typeof KontaktaiRoute
+  PamokosRoute: typeof PamokosRoute
+  PaslaugosRoute: typeof PaslaugosRoute
+  ProgramaRoute: typeof ProgramaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/apie': {
+      id: '/apie'
+      path: '/apie'
+      fullPath: '/apie'
+      preLoaderRoute: typeof ApieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/duk': {
+      id: '/duk'
+      path: '/duk'
+      fullPath: '/duk'
+      preLoaderRoute: typeof DukRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontaktai': {
+      id: '/kontaktai'
+      path: '/kontaktai'
+      fullPath: '/kontaktai'
+      preLoaderRoute: typeof KontaktaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pamokos': {
+      id: '/pamokos'
+      path: '/pamokos'
+      fullPath: '/pamokos'
+      preLoaderRoute: typeof PamokosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paslaugos': {
+      id: '/paslaugos'
+      path: '/paslaugos'
+      fullPath: '/paslaugos'
+      preLoaderRoute: typeof PaslaugosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programa': {
+      id: '/programa'
+      path: '/programa'
+      fullPath: '/programa'
+      preLoaderRoute: typeof ProgramaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApieRoute: ApieRoute,
+  DukRoute: DukRoute,
+  KontaktaiRoute: KontaktaiRoute,
+  PamokosRoute: PamokosRoute,
+  PaslaugosRoute: PaslaugosRoute,
+  ProgramaRoute: ProgramaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

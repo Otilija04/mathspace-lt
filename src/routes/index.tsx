@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CtaBand, Layout, seo } from "@/components/site/Layout";
-import { services } from "@/components/site/data";
+import { pricedServices } from "@/components/site/data";
 
 export const Route = createFileRoute("/")({
   head: () => seo("Matematikos, statistikos ir Excel korepetitorius internetu", "Nuotolinės matematikos ir fizikos pamokos 5–12 kl. (PUPP, VBE), universitetinė tiesinė algebra, analizė, statistika ir Excel. Aiškiai, kantriai, sistemingai."),
@@ -39,11 +39,12 @@ function Home() {
         <p className="eyebrow">Ko mokau</p>
         <h2 id="paslaugos" className="mt-3 text-4xl text-primary">Šešios kryptys, vienas požiūris</h2>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <article key={s.key} className="rounded-2xl border border-border bg-card p-7 transition hover:shadow-soft">
+          {pricedServices.map((s, i) => (
+            <article key={s.key} className="flex flex-col rounded-lg border border-border bg-card p-7 transition hover:shadow-soft">
               <p className="font-serif text-ring text-lg">0{i + 1}</p>
               <h3 className="mt-2 text-xl text-primary">{s.title}</h3>
               <p className="mt-3 text-muted-foreground">{s.text}</p>
+              <p className="mt-auto pt-6 font-serif text-2xl font-semibold text-primary">{s.price}</p>
             </article>
           ))}
         </div>
@@ -55,7 +56,7 @@ function Home() {
           {[
             ["Suprasti, o ne iškalti", "Kiekvieną metodą aiškinu nuo idėjos — kad mokėtumėte jį pritaikyti ir naujame uždavinyje."],
             ["Planas pagal tikslą", "Kontrolinis, egzaminas ar sesija — pamokas dėliojame atgal nuo jūsų termino."],
-            ["Sąžiningai", "Baigiamųjų darbų atveju mokau metodų ir interpretacijos. Darbų už studentus nerašau."],
+            ["Individualus požiūris į kiekvieną mokinį", "Kiekvienas mokinys mokosi skirtingu tempu, todėl pamokas pritaikau individualiai. Mano tikslas – ne tik padėti išspręsti uždavinius, bet ir išmokyti suprasti, savarankiškai mąstyti bei pasitikėti savo žiniomis."],
           ].map(([t, d]) => (
             <div key={t}>
               <h3 className="text-2xl">{t}</h3>

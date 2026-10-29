@@ -5,7 +5,7 @@ import { Layout, PageHeader, seo } from "@/components/site/Layout";
 import { site } from "@/config/site";
 
 export const Route = createFileRoute("/kontaktai")({
-  head: () => seo("Kontaktai ir užklausa", "Parašykite užklausą dėl matematikos, fizikos, statistikos ar Excel pamokų internetu."),
+  head: () => seo("Kontaktai ir užklausa", `Parašykite užklausą dėl matematikos, fizikos, statistikos ar Excel pamokų internetu: ${site.email}, ${site.phone}.`),
   component: Page,
 });
 
@@ -77,7 +77,7 @@ function Page() {
           </button>
           <div role="status" aria-live="polite" className="text-sm">
             {status === "sent" && <p className="text-primary">Ačiū! Užklausa išsiųsta — atsakysiu kuo greičiau.</p>}
-            {status === "mailto" && <p className="text-muted-foreground">Atsidarė jūsų el. pašto programa su paruoštu laišku. Jei neatsidarė, rašykite tiesiogiai: {site.email}</p>}
+            {status === "mailto" && <p className="text-muted-foreground">Laiškas paruoštas jūsų el. pašto programai — išsiųskite jį joje. Jei programa neatsidarė, rašykite tiesiogiai: <a className="underline" href={`mailto:${site.email}`}>{site.email}</a></p>}
             {status === "error" && <p className="text-destructive">Nepavyko išsiųsti. Parašykite el. paštu {site.email} arba per Facebook.</p>}
           </div>
           {!hasBackend && <p className="text-xs text-muted-foreground">Forma siunčiama per jūsų el. pašto programą — duomenys nesaugomi šioje svetainėje.</p>}
@@ -86,9 +86,10 @@ function Page() {
           <div className="rounded-2xl bg-secondary p-7">
             <h2 className="text-2xl text-primary">Tiesioginis kontaktas</h2>
             <p className="mt-4"><span className="eyebrow block">El. paštas</span><a className="text-lg text-primary underline" href={`mailto:${site.email}`}>{site.email}</a></p>
+            <p className="mt-4"><span className="eyebrow block">Telefonas</span><a className="text-lg text-primary underline" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a></p>
             <p className="mt-4"><span className="eyebrow block">Facebook</span><a className="text-lg text-primary underline" href={site.facebookUrl} target="_blank" rel="noopener noreferrer">{site.facebookLabel}</a></p>
           </div>
-          <p className="text-sm text-muted-foreground">Registracija ir apmokėjimas internetu nevykdomi — laiką ir sąlygas suderiname asmeniškai.</p>
+          <p className="text-sm text-muted-foreground">{site.calendlyUrl ? "Pamokos laiką galite pasirinkti registracijos puslapyje arba suderinti asmeniškai." : "Kalendorius dar neprijungtas — laiką ir sąlygas suderiname asmeniškai."} Apmokėjimą aptariame tiesiogiai.</p>
         </aside>
       </section>
     </Layout>

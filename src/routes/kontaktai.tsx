@@ -89,7 +89,7 @@ function Page() {
             <p className="mt-4"><span className="eyebrow block">Telefonas</span><a className="text-lg text-primary underline" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a></p>
             <p className="mt-4"><span className="eyebrow block">Facebook</span><a className="text-lg text-primary underline" href={site.facebookUrl} target="_blank" rel="noopener noreferrer">{site.facebookLabel}</a></p>
           </div>
-          <p className="text-sm text-muted-foreground">{site.calendlyUrl ? "Pamokos laiką galite pasirinkti registracijos puslapyje arba suderinti asmeniškai." : "Kalendorius dar neprijungtas — laiką ir sąlygas suderiname asmeniškai."} Apmokėjimą aptariame tiesiogiai.</p>
+          <p className="text-sm text-muted-foreground">Laiką ir sąlygas suderiname asmeniškai. Apmokėjimą aptariame tiesiogiai.</p>
         </aside>
       </section>
     </Layout>

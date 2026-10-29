@@ -15,14 +15,15 @@ function Page() {
         {site.calendlyUrl ? (
           <iframe title="Pamokų kalendorius" src={site.calendlyUrl} className="h-[760px] w-full rounded-3xl border border-border bg-card" loading="lazy" />
         ) : (
-          <div className="rounded-3xl border-2 border-dashed border-ring/40 bg-card p-8 md:p-12 text-center">
-            <span className="rounded-full bg-accent px-3 py-1 text-xs font-semibold">Kalendorius dar neprijungtas</span>
-            <h2 className="mt-5 text-3xl text-primary">Registracija internetu netrukus</h2>
-            <p className="mx-auto mt-3 max-w-xl text-muted-foreground">Kol kalendorius ruošiamas, parašykite užklausą — atsakysiu ir pasiūlysiu laisvus laikus.</p>
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
-              <Link to="/kontaktai" className="rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground">Siųsti užklausą</Link>
-              <a href={site.facebookUrl} target="_blank" rel="noopener noreferrer" className="rounded-full border border-primary/30 px-7 py-3.5 font-semibold text-primary">Rašyti per Facebook</a>
+          <div className="rounded-3xl bg-secondary p-10 md:p-14 shadow-soft text-center">
+            <h2 className="text-3xl md:text-4xl text-primary">Registruokitės pamokai</h2>
+            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Parašykite užklausą — aptarsime jūsų poreikius ir suderinsime tinkamą pamokos laiką.</p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Link to="/kontaktai" className="rounded-full bg-primary px-7 py-3.5 font-semibold text-primary-foreground hover:opacity-90">Siųsti užklausą</Link>
+              <a href={`mailto:${site.email}`} className="rounded-full border border-primary/30 px-7 py-3.5 font-semibold text-primary hover:bg-card">Rašyti el. paštu</a>
+              <a href={site.facebookUrl} target="_blank" rel="noopener noreferrer" className="rounded-full border border-primary/30 px-7 py-3.5 font-semibold text-primary hover:bg-card">Rašyti per Facebook</a>
             </div>
+            <p className="mt-8 text-sm text-muted-foreground">Arba skambinkite: <a className="font-semibold text-primary underline" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a></p>
           </div>
         )}
       </section>

@@ -48,7 +48,7 @@ function Home() {
             </article>
           ))}
         </div>
-        <Link to="/paslaugos" className="mt-8 inline-block font-semibold text-primary underline underline-offset-4 decoration-accent">Visos paslaugos →</Link>
+        <Link to="/programa" className="mt-8 inline-block font-semibold text-primary underline underline-offset-4 decoration-accent">Išsamios programos čia →</Link>
       </section>
 
       <section className="bg-primary text-primary-foreground">

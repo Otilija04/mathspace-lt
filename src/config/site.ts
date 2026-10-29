@@ -4,23 +4,19 @@
  */
 export const site = {
   name: "MathSpace LT",
-  /** PLACEHOLDER: įrašykite tikrą el. pašto adresą */
-  email: "info@pavyzdys.lt",
+  email: "mathspacelt@gmail.com",
+  phone: "+370 672 13122",
   facebookUrl: "https://www.facebook.com/search/top?q=MathSpace%20LT",
   facebookLabel: "MathSpace LT",
-  /**
-   * KAINŲ INTERVALAI — PLACEHOLDER. Pakeiskite XX/YY tikrais skaičiais prieš publikuodami.
-   * Kol `pricesConfirmed` = false, prie kainų rodoma žyma „Kainos tikslinamos“.
-   */
-  pricesConfirmed: false,
-  prices: [
-    { service: "Matematika ir fizika 5–12 kl.", range: "nuo XX iki YY €/val." },
-    { service: "PUPP / VBE pasiruošimas", range: "nuo XX iki YY €/val." },
-    { service: "Tiesinė algebra ir matematinė analizė", range: "nuo XX iki YY €/val." },
-    { service: "Statistika", range: "nuo XX iki YY €/val." },
-    { service: "Excel", range: "nuo XX iki YY €/val." },
-    { service: "Statistinės analizės konsultacijos", range: "nuo XX iki YY €/val." },
-  ],
+  /** Patvirtintos kainos eurais: pamokoms – valandos intervalas, Excel – visas kursas. */
+  prices: {
+    mokykla: { min: 25, max: 32 },
+    algebra: { min: 32, max: 35 },
+    analize: { min: 32, max: 35 },
+    statistika: { min: 32, max: 35 },
+    excel: { hours: 3, total: 69 },
+    darbai: { min: 30, max: 35 },
+  },
   /**
    * Calendly (ar kitos registracijos sistemos) nuoroda, pvz. "https://calendly.com/jusu-vardas/pamoka".
    * Tuščia = registracijos puslapyje rodomas aiškiai pažymėtas pavyzdys ir užklausos forma.
@@ -34,3 +30,9 @@ export const site = {
    */
   formEndpoint: "",
 };
+
+export function formatPrice(price: { min: number; max: number } | { hours: number; total: number }) {
+  return "total" in price
+    ? `${price.hours} val. kursas – ${price.total} €`
+    : `${price.min}–${price.max} €/val.`;
+}

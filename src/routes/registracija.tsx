@@ -3,14 +3,14 @@ import { Layout, PageHeader, seo } from "@/components/site/Layout";
 import { site } from "@/config/site";
 
 export const Route = createFileRoute("/registracija")({
-  head: () => seo("Registracija į pamoką", "Pasirinkite laisvą laiką ir užsiregistruokite į nuotolinę matematikos, statistikos ar Excel pamoką."),
+  head: () => seo("Registracija į pamoką", site.calendlyUrl ? "Pasirinkite pamokos laiką nuotolinės matematikos, statistikos ar Excel pamokos kalendoriuje." : "Pateikite užklausą dėl nuotolinės matematikos, statistikos ar Excel pamokos. Kol kalendorius neprijungtas, laiką suderiname asmeniškai."),
   component: Page,
 });
 
 function Page() {
   return (
     <Layout>
-      <PageHeader eyebrow="Registracija" title="Pasirinkite pamokos laiką" intro="Pasirinkite jums tinkamą laiką. Laiką patvirtinsiu atskiru laišku." />
+      <PageHeader eyebrow="Registracija" title={site.calendlyUrl ? "Pasirinkite pamokos laiką" : "Suderinkime pamokos laiką"} intro={site.calendlyUrl ? "Pasirinkite jums tinkamą laiką prijungtame kalendoriuje." : "Parašykite užklausą — aptarsime jūsų poreikius ir suderinsime tinkamą laiką."} />
       <section className="mx-auto max-w-5xl px-5 py-12">
         {site.calendlyUrl ? (
           <iframe title="Pamokų kalendorius" src={site.calendlyUrl} className="h-[760px] w-full rounded-3xl border border-border bg-card" loading="lazy" />

@@ -55,6 +55,7 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
           <div className="text-sm space-y-2">
             <a className="block opacity-80 hover:opacity-100" href={`mailto:${site.email}`}>{site.email}</a>
+            <a className="block opacity-80 hover:opacity-100" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
             <a className="block opacity-80 hover:opacity-100" href={site.facebookUrl} target="_blank" rel="noopener noreferrer">Facebook: {site.facebookLabel}</a>
             <p className="opacity-60 pt-4">© {new Date().getFullYear()} MathSpace LT</p>
           </div>

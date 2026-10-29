@@ -9,5 +9,5 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Editable business data (email, Facebook, price, photo, form endpoint) lives only in src/config/site.ts — keeps placeholders in one place for the owner.
+- Editable business data (email, phone, Facebook, numeric prices, photo, calendar URL, form endpoint) lives only in src/config/site.ts; formatPrice and pricedServices provide shared display prices for cards and FAQs to prevent inconsistent rates.
 - Contact form posts JSON to `site.formEndpoint` when set, otherwise falls back to mailto — no backend required.

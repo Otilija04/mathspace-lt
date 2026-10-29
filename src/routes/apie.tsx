@@ -3,7 +3,7 @@ import { CtaBand, Layout, PageHeader, seo } from "@/components/site/Layout";
 import { Portrait } from "@/components/site/Portrait";
 
 export const Route = createFileRoute("/apie")({
-  head: () => seo("Apie korepetitorių", "Vilniaus universiteto matematikos bakalauras, privataus mokymo patirtis nuo 2022 m., klinikinės statistinės analizės patirtis."),
+  head: () => seo("Apie korepetitorę", "Vilniaus universiteto matematikos bakalaurė, klinikinių duomenų statistinės analizės ir duomenų bei produktų užsakymų planavimo patirtis „Lidl“ įmonėje."),
   component: Page,
 });
 
@@ -14,20 +14,9 @@ function Page() {
       <section className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1fr_1.5fr] items-start">
         <Portrait />
         <div className="space-y-6 text-lg">
-          <p>Esu nepriklausomas korepetitorius, mokantis matematikos, fizikos, statistikos ir Excel. Mano tikslas — kad mokinys ar studentas ne tik išspręstų uždavinį, bet ir suprastų, <em>kodėl</em> sprendimas veikia.</p>
-          <ul className="space-y-4">
-            {[
-              ["Išsilavinimas", "Matematikos bakalauro laipsnis, Vilniaus universitetas."],
-              ["Mokymo patirtis", "Privačiai moku nuo 2022 metų."],
-              ["Praktinė statistika", "Patirtis atliekant klinikinių duomenų statistinę analizę."],
-            ].map(([t, d]) => (
-              <li key={t} className="border-l-2 border-accent pl-5">
-                <p className="eyebrow">{t}</p>
-                <p className="mt-1">{d}</p>
-              </li>
-            ))}
-          </ul>
-          <p className="text-muted-foreground">Dirbu su moksleiviais nuo 5 klasės iki abitūros ir su universitetų studentais — kantriai, struktūruotai ir be „tai juk akivaizdu“.</p>
+          <p>Esu įgijusi matematikos bakalauro laipsnį Vilniaus universiteto Matematikos ir informatikos fakultete, statistikos srityje. Turiu patirties atliekant klinikinių duomenų statistinę analizę, taip pat esu dirbusi tarptautinėje „Lidl“ įmonėje, kurioje teko analizuoti duomenis ir dirbti su produktų užsakymų planavimu.</p>
+          <p>Dirbu su moksleiviais nuo 5 klasės iki abitūros ir su universitetų studentais. Pamokose vertinu aiškumą, kantrybę ir struktūruotą mokymą.</p>
+          <p>Siekiu, kad mokiniai ne tik išmoktų spręsti uždavinius, bet ir suprastų jų sprendimo principus. Kiekvienam mokiniui pritaikau mokymosi tempą ir metodus pagal jo žinias, poreikius bei tikslus.</p>
         </div>
       </section>
       <CtaBand />

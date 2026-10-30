@@ -3,7 +3,10 @@ import { CtaBand, Layout, seo } from "@/components/site/Layout";
 import { pricedServices } from "@/components/site/data";
 
 export const Route = createFileRoute("/")({
-  head: () => seo("Matematikos, statistikos ir Excel korepetitorius internetu", "Nuotolinės matematikos ir fizikos pamokos 5–12 kl. (PUPP, VBE), universitetinė tiesinė algebra, analizė, statistika ir Excel. Aiškiai, kantriai, sistemingai."),
+  head: () => seo(
+    "Matematikos korepetitorius internetu",
+    "Individualios matematikos pamokos internetu 5–12 klasių mokiniams ir studentams. Pasiruošimas PUPP, VBE, aukštoji matematika, statistika ir Excel."
+  ),
   component: Home,
 });
 

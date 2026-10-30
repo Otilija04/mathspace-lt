@@ -1,8 +1,12 @@
+```tsx
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaBand, Layout, PageHeader, seo } from "@/components/site/Layout";
 
 export const Route = createFileRoute("/pamokos")({
-  head: () => seo("Kaip vyksta nuotolinės pamokos", "Nuo užklausos iki pirmos pamokos: kaip vyksta individualios nuotolinės matematikos, statistikos ir Excel pamokos."),
+  head: () => seo(
+    "Kaip vyksta individualios matematikos pamokos internetu",
+    "Sužinokite, kaip vyksta individualios matematikos, statistikos ir Excel pamokos internetu. Registracija, pirmoji pamoka, mokymosi planas ir užduotys."
+  ),
   component: Page,
 });
 
@@ -16,7 +20,12 @@ const steps = [
 function Page() {
   return (
     <Layout>
-      <PageHeader eyebrow="Pamokos" title="Kaip vyksta pamokos internetu" intro="Paprasta, aišku ir patogu — iš namų, bendrabučio ar bibliotekos." />
+      <PageHeader
+        eyebrow="Pamokos"
+        title="Kaip vyksta pamokos internetu"
+        intro="Paprasta, aišku ir patogu — iš namų, bendrabučio ar bibliotekos."
+      />
+
       <section className="mx-auto max-w-6xl px-5 py-16">
         <ol className="grid gap-5 md:grid-cols-4">
           {steps.map(([t, d], i) => (
@@ -27,6 +36,7 @@ function Page() {
             </li>
           ))}
         </ol>
+
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl bg-secondary p-8">
             <h2 className="text-2xl text-primary">Ko reikės</h2>
@@ -37,6 +47,7 @@ function Page() {
               <li>— Excel pamokoms — įdiegtos Excel programos</li>
             </ul>
           </div>
+
           <div className="rounded-2xl bg-secondary p-8">
             <h2 className="text-2xl text-primary">Ką gaunate</h2>
             <ul className="mt-4 space-y-2 text-foreground">
@@ -48,7 +59,9 @@ function Page() {
           </div>
         </div>
       </section>
+
       <CtaBand />
     </Layout>
   );
 }
+```

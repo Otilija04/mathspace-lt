@@ -1,4 +1,3 @@
-```tsx
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaBand, Layout, PageHeader, seo } from "@/components/site/Layout";
 
@@ -64,4 +63,4 @@ function Page() {
     </Layout>
   );
 }
-```
+

@@ -93,15 +93,23 @@ export function CtaBand() {
 
 export function seo(title: string, description: string) {
   const t = `${title} | MathSpace LT`;
+  const image = "https://mathspace.lt/og-image.png";
+
   return {
     meta: [
       { title: t },
       { name: "description", content: description },
+
       { property: "og:title", content: t },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "lt_LT" },
+      { property: "og:image", content: image },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: image },
     ],
   };
 }

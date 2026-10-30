@@ -1,9 +1,4 @@
-import portraitAsset from "@/assets/tutor-portrait.jpg.asset.json";
 
-/**
- * Vienoje vietoje redaguojami svetainės duomenys.
- * Pakeiskite PLACEHOLDER reikšmes tikrais duomenimis.
- */
 export const site = {
   name: "MathSpace LT",
   email: "mathspacelt@gmail.com",
@@ -24,12 +19,7 @@ export const site = {
    * Tuščia = registracijos puslapyje rodomas aiškiai pažymėtas pavyzdys ir užklausos forma.
    */
   calendlyUrl: "",
-  /** Originali korepetitorės nuotrauka. Tuščia reikšmė = rodomas rėmelis. */
-  photoUrl: portraitAsset.url,
-  /**
-   * Formos siuntimo adresas (pvz. Formspree / savas serveris), priimantis POST JSON.
-   * Tuščia = forma atidaro el. pašto programą su užpildytu laišku.
-   */
+ photoUrl: "/portretas.jpg",
   formEndpoint: "",
 };
 

@@ -3,7 +3,7 @@ import { site } from "@/config/site";
 /** Rodo site.photoUrl nuotrauką arba elegantišką, aiškiai pažymėtą vietą nuotraukai. */
 export function Portrait({ className = "" }: { className?: string }) {
   if (site.photoUrl) {
-    return <img src={site.photoUrl} alt="MathSpace LT korepetitoriaus portretas" className={`aspect-[4/5] w-full rounded-3xl object-cover shadow-soft ${className}`} />;
+    return <img src={site.photoUrl} alt="MathSpace LT korepetitorės portretas" className={`h-auto w-full rounded-3xl shadow-soft ${className}`} />;
   }
   return (
     <figure className={`relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-border bg-secondary shadow-soft ${className}`} aria-label="Vieta portreto nuotraukai">

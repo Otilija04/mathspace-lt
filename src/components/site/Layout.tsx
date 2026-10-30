@@ -5,7 +5,7 @@ import { site } from "@/config/site";
 const nav = [
   { to: "/paslaugos", label: "Paslaugos" },
   { to: "/programa", label: "Programa" },
-  { to: "/apie", label: "Apie" },
+  { to: "/apie", label: "Apie mane" },
   { to: "/pamokos", label: "Kaip vyksta pamokos" },
   { to: "/duk", label: "DUK" },
   { to: "/registracija", label: "Registracija" },

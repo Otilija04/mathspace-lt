@@ -3,12 +3,12 @@ import { useState, type ReactNode } from "react";
 import { site } from "@/config/site";
 
 const nav = [
-  { to: "/paslaugos", label: "Paslaugos" },
-  { to: "/programa", label: "Programa" },
   { to: "/apie", label: "Apie mane" },
-  { to: "/pamokos", label: "Kaip vyksta pamokos" },
-  { to: "/duk", label: "DUK" },
+  { to: "/paslaugos", label: "Paslaugos" },
   { to: "/registracija", label: "Registracija" },
+  { to: "/programa", label: "Programa" },
+  { to: "/duk", label: "DUK" },
+  { to: "/pamokos", label: "Kaip vyksta pamokos" },
 ] as const;
 
 export function Layout({ children }: { children: ReactNode }) {

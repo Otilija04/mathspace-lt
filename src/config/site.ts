@@ -1,7 +1,7 @@
 
 export const site = {
   name: "MathSpace LT",
-  email: "mathspacelt@gmail.com",
+  email: "info@mathspace.lt",
   phone: "+370 672 13122",
   facebookUrl: "https://www.facebook.com/search/top?q=MathSpace%20LT",
   facebookLabel: "MathSpace LT",

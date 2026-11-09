@@ -3,15 +3,34 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CtaBand, Layout, seo } from "@/components/site/Layout";
 import { pricedServices } from "@/components/site/data";
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "MathSpace LT",
+  alternateName: ["Math Space", "MathSpace"],
+  url: "https://mathspace.lt/",
+};
+
 export const Route = createFileRoute("/")({
-  head: () =>
-    seo(
+  head: () => {
+    const head = seo(
       "Matematikos korepetitorius internetu – mokiniams ir studentams",
       "Individualios matematikos, fizikos, statistikos ir Excel pamokos internetu visoje Lietuvoje. Interaktyvus mokymasis, žaidybinės užduotys, pasiruošimas PUPP, VBE ir universitetiniams atsiskaitymams."
-    ),
+    );
+
+    return {
+      ...head,
+      scripts: [
+        ...(head.scripts ?? []),
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(websiteSchema),
+        },
+      ],
+    };
+  },
   component: Home,
 });
-
 function Home() {
   return (
     <Layout>
